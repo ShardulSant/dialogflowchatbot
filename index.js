@@ -19,14 +19,17 @@ app.post("/webhook", (req, res) => {
 
     // Extract the necessary parameters from Dialogflow's request
     const userData = body.queryResult.parameters; // The parameters Dialogflow sends
+    const aiSensyMessage = JSON.parse(req.body.originalDetectIntentRequest.payload.AiSensyMessage);
 
+    // Extract the phone_number from AiSensyMessage
+    const phoneNumber = aiSensyMessage.phone_number;
     // Example: Get the 'name' parameter from Dialogflow (ensure the parameter is defined in your intent)
     const userName = userData.name;
     const mobileNumber = req.headers['MobileNumber'];
     // Prepare the data for Firebase
     console.log("Request Body: ", JSON.stringify(req.body, null, 2));
     const data = {
-        name: mobileNumber, // Store the extracted parameter (e.g., 'name')
+        phone_number: phoneNumber, // Store the extracted parameter (e.g., 'name')
         timestamp: new Date().toISOString(),
     };
 
