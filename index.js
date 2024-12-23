@@ -24,6 +24,7 @@ app.post("/webhook", (req, res) => {
     const userName = userData.name;
     const mobileNumber = req.headers['MobileNumber'];
     // Prepare the data for Firebase
+    console.log("Request Body: ", JSON.stringify(req.body, null, 2));
     const data = {
         name: mobileNumber, // Store the extracted parameter (e.g., 'name')
         timestamp: new Date().toISOString(),
