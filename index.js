@@ -2,10 +2,13 @@ const express = require("express");
 const axios = require("axios");
 const app = express();
 const port = 3000;
+const cors = require("cors"); // Import CORS package
+
+
 
 // Middleware to parse JSON bodies
 app.use(express.json());
-
+app.use(cors());
 // Firebase Database URL and API Key
 const databaseURL = "https://asdad-d1423-default-rtdb.firebaseio.com";
 const apiKey = "AIzaSyC54xDhOr7tcTM5eI7uijppprWkcODRb2I";
