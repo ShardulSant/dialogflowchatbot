@@ -22,7 +22,7 @@ app.post("/webhook", (req, res) => {
 
     // Example: Get the 'name' parameter from Dialogflow (ensure the parameter is defined in your intent)
     const userName = userData.name;
-
+    const mobileNumber = req.headers['MobileNumber'];
     // Prepare the data for Firebase
     const data = {
         name: userName, // Store the extracted parameter (e.g., 'name')
