@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 // Firebase Database URL and API Key
 const databaseURL = "https://asdad-d1423-default-rtdb.firebaseio.com";
-const apiKey = api_key;
+const apiKey = process.env.api_key;
 
 // POST endpoint for Dialogflow fulfillment webhook
 app.post("/webhook", (req, res) => {
