@@ -57,7 +57,7 @@ app.post("/webhook", (req, res) => {
     
     // Extract the phone_number from AiSensyMessage
     const phoneNumber = aiSensyMessage.phone_number;
-    const userName = aiSensymessage.userName || "demo"; // Default to "demo" if not provided
+    const userName = aiSensyMessage.userName || "demo"; // Default to "demo" if not provided
     const timestamp = new Date().toISOString();
 
     console.log("Request Body: ", JSON.stringify(req.body, null, 2));
