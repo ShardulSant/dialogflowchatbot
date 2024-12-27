@@ -11,7 +11,10 @@ const dbConfig = {
     host: 'dpg-ctn61952ng1s73bhfdag-a.oregon-postgres.render.com', // Your PostgreSQL hostname
     database: 'dialogflowdatabase', // Your database name
     password: 'TrJYUFQ1fZrtB1r3GBm27CXxGvcmdnVc', // Your DB password
-    port: 5432, // PostgreSQL port
+    port: 5432, 
+    ssl: {
+        rejectUnauthorized: false, // This is important to avoid SSL verification issues
+    },// PostgreSQL port
 };
 
 // Create a new client instance
