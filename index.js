@@ -61,7 +61,7 @@ app.post("/webhook", (req, res) => {
     const timestamp = new Date().toISOString();
 
     console.log("Request Body: ", JSON.stringify(req.body, null, 2));
-    console.log("Request Body: ", JSON.stringify(res.body, null, 2));
+    console.log("Response Body: ", JSON.stringify(res.body, null, 2));
     // Insert data into PostgreSQL
     const insertQuery = `
         INSERT INTO users (phone_number, user_name, timestamp) 
